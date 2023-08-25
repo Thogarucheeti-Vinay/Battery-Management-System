@@ -1,31 +1,3 @@
-function saveBatteryDetails() {
-    let time = document.getElementById("time").value;
-    time = new Date(time).getTime();
-    const batteryDetails = {
-        battery_id: document.getElementById("battery_id").value,
-        current: parseFloat(document.getElementById("curr").value),
-        voltage: parseFloat(document.getElementById("volt").value),
-        temp: parseFloat(document.getElementById("temp").value),
-        time: parseInt(time)
-    };
-    console.log(batteryDetails);
-    const fetchOptions = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(batteryDetails)
-    };
-    fetch('/api/saveBatteryData', fetchOptions)
-        .then(response => response.json())
-        .then(data => {
-            console.log(data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-}
-
 function getBatteryInfoById() {
     const batteryId = document.getElementById("batteryId").value;
     fetch(`/api/getBatteryInfoByID/${batteryId}`)
