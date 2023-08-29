@@ -1,66 +1,76 @@
-package com.nunam.bms.pojo.impl;
+package com.nunam.bms.dao.entity;
 
-import com.nunam.bms.pojo.api.IBatteryDetails;
+import jakarta.persistence.*;
 
-public class BatteryDetailsImpl implements IBatteryDetails {
+@Entity
+@Table(name = "battery_details")
+public class BatteryDetails {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "battery_id")
     private Long batteryID;
 
+    @Column(name = "current")
     private Double current;
 
+    @Column(name = "voltage")
     private Double voltage;
 
+    @Column(name = "temperature")
     private Double temperature;
 
+    @Column(name = "time")
     private Long time;
 
-    @Override
     public Long getBatteryID() {
         return batteryID;
     }
 
-    @Override
     public void setBatteryID(Long batteryID) {
         this.batteryID = batteryID;
     }
 
-    @Override
     public Double getCurrent() {
         return current;
     }
 
-    @Override
     public void setCurrent(Double current) {
         this.current = current;
     }
 
-    @Override
     public Double getVoltage() {
         return voltage;
     }
 
-    @Override
     public void setVoltage(Double voltage) {
         this.voltage = voltage;
     }
 
-    @Override
     public Double getTemperature() {
         return temperature;
     }
 
-    @Override
     public void setTemperature(Double temperature) {
         this.temperature = temperature;
     }
 
-    @Override
     public Long getTime() {
         return time;
     }
 
-    @Override
     public void setTime(Long time) {
+        this.time = time;
+    }
+
+    public BatteryDetails() {
+    }
+
+    public BatteryDetails(Long batteryID, Double current, Double voltage, Double temperature, Long time) {
+        this.batteryID = batteryID;
+        this.current = current;
+        this.voltage = voltage;
+        this.temperature = temperature;
         this.time = time;
     }
 }

@@ -2,9 +2,9 @@ package com.nunam.bms.pojo.api;
 
 public interface IBatteryDetails {
 
-    String getBatteryUUID();
+    Long getBatteryID();
 
-    void setBatteryUUID(String batteryUUID);
+    void setBatteryID(Long batteryID);
 
     Double getCurrent();
 
