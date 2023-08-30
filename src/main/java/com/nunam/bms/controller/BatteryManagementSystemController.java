@@ -38,7 +38,7 @@ public class BatteryManagementSystemController {
 
     @GetMapping(APIConstants.GET_BATTERY_INFO_BY_ID)
     public APIResponse getBatteryInfoByID(@PathVariable Long batteryID){
-        LOGGER.debug("BatteryManagementSystemController :: getBatteryInfoByID :: batteryID : {}", batteryID);
+        System.out.println("BatteryManagementSystemController :: getBatteryInfoByID :: batteryID : {}");
 
         try {
             if(batteryID == null || batteryID <=0){

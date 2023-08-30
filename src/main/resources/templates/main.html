@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <title>Battery Management System</title>
+</head>
+<body>
+<h1>Battery Management System</h1>
+<div>
+    <h3>Get Battery Information by ID</h3>
+    <input type="text" id="batteryId" class="form-control w-50 m-3" placeholder="Battery ID">
+    <button class="btn btn-primary m-3" onclick="getBatteryInfoById()">Get Battery Info</button>
+    <div id="batteryInfo" class="m-3"></div>
+</div>
+
+<div>
+    <h3>Get Specific Battery Attribute by ID</h3>
+    <input type="text" id="batteryId2" class="form-control w-50 m-3" placeholder="Battery ID">
+    <select id="attributeDropdown1" class="form-control w-50 m-3">
+        <option value="current">Current</option>
+        <option value="voltage">Voltage</option>
+        <option value="temperature">Temperature</option>
+        <option value="time">Time</option>
+    </select><button class="btn btn-primary m-3" onclick="getSpecificBatteryAttribute()">Get Attribute</button>
+    <div id="attributeInfo" class="m-3"></div>
+</div>
+
+<div>
+    <h3>Get Specific Battery Attribute by Time</h3>
+    <input type="text" id="batteryId3" class="form-control w-50 m-3" placeholder="Battery ID">
+    <select id="attributeDropdown2" class="form-control w-50 m-3">
+        <option value="current">Current</option>
+        <option value="voltage">Voltage</option>
+        <option value="temperature">Temperature</option>
+        <option value="time">Time</option>
+    </select>
+    <input type="date" id="startTime" class="form-control w-50 m-3" placeholder="Start Time">
+    <input type="date" id="endTime" class="form-control w-50 m-3" placeholder="End Time">
+    <button class="btn btn-primary m-3" onclick="getSpecificBatteryAttributeByTime()">Get Attribute by Time</button>
+    <div id="attributeTimeInfo" class="m-3"></div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
