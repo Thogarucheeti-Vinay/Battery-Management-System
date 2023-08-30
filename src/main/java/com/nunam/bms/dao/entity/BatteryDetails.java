@@ -1,5 +1,6 @@
 package com.nunam.bms.dao.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 @Entity
@@ -7,21 +8,40 @@ import jakarta.persistence.*;
 public class BatteryDetails {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    @JsonProperty("battery_id")
     @Column(name = "battery_id")
     private Long batteryID;
 
+    @JsonProperty("current")
     @Column(name = "current")
     private Double current;
 
+    @JsonProperty("voltage")
     @Column(name = "voltage")
     private Double voltage;
 
+    @JsonProperty("temp")
     @Column(name = "temperature")
     private Double temperature;
 
+    @JsonProperty("time")
     @Column(name = "time")
     private Long time;
+
+    public BatteryDetails() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Long getBatteryID() {
         return batteryID;
@@ -61,9 +81,6 @@ public class BatteryDetails {
 
     public void setTime(Long time) {
         this.time = time;
-    }
-
-    public BatteryDetails() {
     }
 
     public BatteryDetails(Long batteryID, Double current, Double voltage, Double temperature, Long time) {

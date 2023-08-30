@@ -1,13 +1,17 @@
 package com.nunam.bms.service.api;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.nunam.bms.pojo.api.IBatteryDetails;
+import com.nunam.bms.dao.entity.BatteryDetails;
+
+import java.util.List;
 
 public interface IBatteryDetailsService {
 
-    IBatteryDetails getBatteryInfoByID(Long batteryID) throws JsonProcessingException;
+    List<BatteryDetails> getBatteryInfoByID(Long batteryID) throws JsonProcessingException;
 
-    Object getSpecificBatteryAttributeByID(Long batteryID, String attribute);
+    List<Object> getSpecificBatteryAttributeByID(Long batteryID, String attribute) throws Exception;
 
-    void saveBatteryDetails(IBatteryDetails batteryDetails);
+    List<Object> getSpecificBatteryAttributeByTime(Long batteryID, String attribute, Long startTime, Long endTime) throws Exception;
+
+    void saveBatteryDetails(BatteryDetails batteryDetails);
 }

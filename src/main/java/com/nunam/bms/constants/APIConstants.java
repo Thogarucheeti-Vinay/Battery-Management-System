@@ -6,5 +6,9 @@ public class APIConstants {
 
     public static final String GET_SPECIFIC_BATTERY_ATTRIBUTE_BY_ID =
             "/api/getSpecificBatteryAttributeByID/{batteryID}/{attribute}";
+
+    public static final String GET_SPECIFIC_BATTERY_ATTRIBUTE_BY_TIME =
+            "/api/getSpecificBatteryAttributeByID/{batteryID}/{attribute}/{startTime}/{endTime}";
+
     public static final String SAVE_BATTERY_DATA = "/api/saveBatteryData";
 }

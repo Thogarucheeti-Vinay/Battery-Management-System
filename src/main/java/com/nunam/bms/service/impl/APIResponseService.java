@@ -1,6 +1,6 @@
 package com.nunam.bms.service.impl;
 
-import com.nunam.bms.pojo.impl.APIResponse;
+import com.nunam.bms.pojo.APIResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 

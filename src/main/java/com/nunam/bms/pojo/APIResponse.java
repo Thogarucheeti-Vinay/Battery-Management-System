@@ -1,4 +1,4 @@
-package com.nunam.bms.pojo.impl;
+package com.nunam.bms.pojo;
 
 public class APIResponse {
 
