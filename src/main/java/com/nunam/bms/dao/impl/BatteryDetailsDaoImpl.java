@@ -71,19 +71,19 @@ public class BatteryDetailsDaoImpl implements BatteryDetailsDao {
         if (!batteryDetailsList.isEmpty()) {
             for (BatteryDetails batteryDetails : batteryDetailsList) {
                 if (attribute.equalsIgnoreCase(TEMPERATURE)
-                        && (startTime <= batteryDetails.getTime() || endTime >= batteryDetails.getTime())) {
+                        && (startTime <= batteryDetails.getTime().getTime() || endTime >= batteryDetails.getTime().getTime())) {
 
                     attributeList.add(batteryDetails.getTemperature());
                 } else if (attribute.equalsIgnoreCase(VOLTAGE)
-                        && (startTime <= batteryDetails.getTime() || endTime >= batteryDetails.getTime())) {
+                        && (startTime <= batteryDetails.getTime().getTime() || endTime >= batteryDetails.getTime().getTime())) {
 
                     attributeList.add(batteryDetails.getVoltage());
                 } else if (attribute.equalsIgnoreCase(CURRENT)
-                        && (startTime <= batteryDetails.getTime() || endTime >= batteryDetails.getTime())) {
+                        && (startTime <= batteryDetails.getTime().getTime() || endTime >= batteryDetails.getTime().getTime())) {
 
                     attributeList.add(batteryDetails.getCurrent());
                 } else if (attribute.equalsIgnoreCase(TIME)
-                        && (startTime <= batteryDetails.getTime() || endTime >= batteryDetails.getTime())) {
+                        && (startTime <= batteryDetails.getTime().getTime() || endTime >= batteryDetails.getTime().getTime())) {
 
                     attributeList.add(batteryDetails.getTime());
                 } else {

@@ -23,6 +23,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests((requests) -> requests
+                        .requestMatchers(HttpMethod.POST,"/api/saveBatteryData").permitAll()
                         .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
@@ -43,7 +44,6 @@ public class SecurityConfig {
                         .password("vinay123")
                         .roles("USER")
                         .build();
-        System.out.println("USER ::::: " + user);
         return new InMemoryUserDetailsManager(user);
     }
 }
